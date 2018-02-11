@@ -51,7 +51,7 @@ var hardBtn = document.querySelector("#hardBtn");
 	reset.addEventListener("click", function()
 	{
 			//generate all new colors
-			genRandColor(num);
+			colors=genRandColor(num);
 			pickedColor=pickColor();
 			colorDisplay.textContent=pickedColor;
 			message.textContent=" ";
