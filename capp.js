@@ -8,6 +8,10 @@ var h1 = document.querySelector("h1");
 var reset =  document.querySelector("#reset");
 var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
+var score = document.querySelector("#score");
+var atts = document.querySelector("#atts");
+var wins = 6;
+var tries = 0;
 
 
 	easyBtn.addEventListener("click", function()
@@ -15,6 +19,8 @@ var hardBtn = document.querySelector("#hardBtn");
 			easyBtn.classList.add("selected");
 			hardBtn.classList.remove("selected");
 			num=3;
+			wins =3;
+			tries = 0;
 			colors=genRandColor(num);
 			pickedColor=pickColor();
 			colorDisplay.textContent=pickedColor;
@@ -37,6 +43,7 @@ var hardBtn = document.querySelector("#hardBtn");
 			easyBtn.classList.remove("selected");
 			hardBtn.classList.add("selected");	
 			num=6;
+			tries = 0;
 			colors=genRandColor(num);
 			pickedColor=pickColor();
 			colorDisplay.textContent=pickedColor;
@@ -49,7 +56,9 @@ var hardBtn = document.querySelector("#hardBtn");
 	});
 
 	reset.addEventListener("click", function()
-	{
+	{tries = 0;
+		atts.textContent=tries;
+		score.textContent=0;
 			//generate all new colors
 			colors=genRandColor(num);
 			pickedColor=pickColor();
@@ -76,11 +85,25 @@ var hardBtn = document.querySelector("#hardBtn");
 								{
 									message.textContent="Correct !";
 									change(pickedColor);
+									//wins=((tries+1)/6)*100;
+									atts.textContent=tries+1;
+									if(tries==5){
+										score.textContent=0;
+									}
+									else{
+									score.textContent=100-(tries/6.0)*100;
+								}
 									h1.style.backgroundColor=clickedColor;
 									reset.textContent="Play Again !";
+									tries=0;
+									//wins=6;
 								}
 							else
 								{
+									//wins--;
+									tries++;
+									score.textContent=100-(tries/6.0)*100;
+									atts.textContent=tries;
 									this.style.background="#232323";
 									message.textContent="Try Again !";
 								}
