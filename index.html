@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Color Game</title>
-	<link rel="stylesheet" type="text/css" href="capp.css">
-	<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
-<link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/love-wins/500/Rainbow_horn-512.png" type="image/x-icon" />
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<title>To do List</title>
+	<script type="text/javascript" src="Assets/JS/LIB/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="Assets/CSS/todos.css">
+	<link href="https://fonts.googleapis.com/css?family=Cinzel|Comfortaa|Poiret+One|Raleway" rel="stylesheet">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link rel="icon" href="https://cdn3.iconfinder.com/data/icons/ikooni-flat-online-shopping/128/shopping-08-512.png">
 </head>
+
 <body>
-<h1>The Great<br> <span id="colorDisplay">RGB</span><br> Guessing Game</h1>
 
-<div id="stripe">
-	<button id="reset">New Colors</button>
-	<span id="msg"></span>
-	<button id="easyBtn">Easy</button>
-	<button id="hardBtn" class="selected">Hard</button>
+<div id="container">
+	<h1>To-do List<span id="toggle-form"><i class="fas fa-plus"></i></span></h1>
+	<input type="text" placeholder="What's on your mind today ?">
+	<ul>
+		<li><span><i class="fas fa-trash-alt"></i></span>  4</li>
+		<li><span><i class="fas fa-trash-alt"></i></span>  3</li>
+		<li><span><i class="fas fa-trash-alt"></i></span>  2</li>
+		<li><span><i class="fas fa-trash-alt"></i></span>  1</li>
+	</ul>
 </div>
 
-<div id="container">	
-	<div class="square"></div>
-	<div class="square"></div>
-	<div class="square"></div>
-	<div class="square"></div>
-	<div class="square"></div>
-	<div class="square"></div>
-</div>	
-<br>
-<div id="result">
-<h2> Attempts : <span id="atts">0</span><br> Your Score : <span id="score">100</span>%</h2>
-</div>
-<script type="text/javascript" src="capp.js"></script>
+
+
+
+<script type="text/javascript" src="Assets/JS/todos.js"></script>
 </body>
 </html>
